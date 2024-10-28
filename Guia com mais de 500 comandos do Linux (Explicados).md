@@ -110,12 +110,179 @@ Porém, antes de executarem os comandos no terminal, lembrem-se da famosa frase 
 ## 3. Lista de comandos
 
 **`ls`**
->_Lista de diretórios._
+> _Lista de diretórios._
 
 **`ls -al`**
->_Lista de diretórios com exibição de arquivos ocultos._
+> _Lista de diretórios com exibição de arquivos ocultos._
 
 **`cd dir`**
 > _Muda do diretório atual para o especificado (substituir a variável_ **`dir`** _pelo nome da pasta)._
+
+**`cd`**
+> _Muda para o diretório /home (arquivos pessoais)._
+
+**`Pwd`**
+> _Exibe o caminho do diretório atual._
+
+**`mkdir dir*`**
+> _Cria um diretório especificado (substituir a variável_ **`dir`** _pelo nome da pasta)._
+
+**`rm arq`**
+> _Apaga o arquivo especificado (substituir a variável_ **`arq`** _pelo nome do arquivo que se quer excluir)._
+
+**`rm -r dir`**
+> _Apaga o diretório especificado (substituir a variável_ **`dir`** _pelo nome da pasta)._
+
+**`rm -f arq`**
+> _Apaga o arquivo especificado forçadamente (_ **`-f`** _de force) (substituir a variável_ **`arq`** _pelo nome do arquivo que se quer excluir)._
+
+**`rm -rf dir`**
+> _Apaga o diretório especificado forçadamente (substituir a variável_ **`dir`** _pelo nome da pasta)._
+> **Utilize esse comando com extrema atenção!**
+
+**`cp -r arq1 arq2`**
+> _Copia o **“arquivo1”** para o **“arquivo2”** (substituir a variável_ **`arq`** _pelo nome do arquivo)._
+
+**`cp -r dir1 dir2`**
+> _Copia o “diretório1” para o **“diretório2”**; cria o **“diretório2”** caso não exista (substituir a variável_ **`dir`** _pelo nome do diretório)._
+
+**`mv arq1 arq2`**
+> _Dupla função: Pode ser usado para renomear ou mover o **“arquivo1”** para **“arquivo2”**. Se o arquivo2 for um diretório existente, move **“arquivo1”** para dentro do diretório **“arquivo2”** (substituir a variável_ **`arq`** _pelo nome do arquivo)._
+
+**`ln -s arq link`**
+> _Cria um link (atalho) simbólico para o arquivo (substituir a variável_ **`arq`** _pelo nome do arquivo e_ **`link`** _pelo nome que terá o atalho)._
+
+**`touch arq`**
+> _Cria ou atualiza o arquivo (substituir a variável_ **`arq`** _pelo nome do arquivo)._
+
+**`cat > arq`**
+> _Direciona a entrada padrão para um arquivo (substituir a variável_ **`arq`** _pelo nome do arquivo)._
+
+**`more arq`**
+> _Exibe o conteúdo de um arquivo (substituir a variável_ **`arq`** _pelo nome do arquivo)._
+
+**`head arq`**
+> _Exibe as primeiras 10 linhas de um arquivo (substituir a variável_ **`arq`** _pelo nome do arquivo)._
+
+**`tail arq`**
+> _Exibe as últimas 10 linhas de um arquivo (substituir a variável_ **`arq`** _pelo nome do arquivo)._
+
+**`tail -f arq`**
+> _Exibe o conteúdo de um arquivo enquanto ele é atualizado (aumenta de tamanho), iniciando com as últimas 10 linhas (substituir a variável_ **`arq`** _pelo nome do arquivo)._
+
+**`ps`**
+> _Exibe os processos dos usuários ativos em tempo real._
+
+**`top`**
+> _Exibe todos os processos rodando em tempo real._
+
+**`kill pid`**
+> _Mata um processo específico pelo número ID (substituir_ **`pid`** _pelo número do processo)._
+
+**`killall proc`**
+> _Mata todos os processos com o nome especificado em **“proc”** (substituir_ **`proc`** _pelo nome do processo)._
+
+**`bg`**
+> _Lista trabalhos parados, em segundo plano ou pode continuá-los também._
+
+**`fg`**
+> _Traz o trabalho mais recente para o primeiro plano_
+
+**`fg trab`**
+> _Traz o trabalho **“trab”** para o primeiro plano (substituir_ **`trab`** _pelo nome do processo)._
+
+**`chmod octal arq`**
+> _Muda as permissões do arquivo **“arq”** para os valores especificados em octal, que podem ser atribuídos separadamente para **“usuário”**, **“grupo”** e **“outros”**. Os valores em octal são representados da seguinte forma:_
+> * _4 - leitura (r, de_ read);
+> * _2 - gravação (w, de_ write);
+> * _1 - execução (x, de_ execute).
+>
+> **Explanação:** _Para definir as permissões, somam-se os valores acima. Por exemplo, para atribuir ao dono do arquivo (**“usuário”**) acesso total de leitura (r), gravação (w) e execução (x), basta somar o valor octal 4 + 2 + 1 = 7. Se você deseja permitir apenas leitura e gravação para membros do **“grupo”**, soma-se 4 + 2 = 6. Para aplicar ambos os exemplos, use `chmod 760`, onde o usuário tem permissão total (rwx), o grupo tem leitura e gravação (**rw-**) e outros não têm nenhuma permissão (**`0`**)._
+>
+> **Outros exemplos:**
+>
+> * **`chmod 777`**
+> > _leitura (r), gravação (w) e execução (x) para todos (**“usuário”**, **“grupo”** e **“outros”**)._
+> * **`chmod 755`**
+> > _leitura (r), gravação (w) e execução (x) para o **“usuário”** **(dono)**, e leitura e execução **(r-x)** para **“grupo”** e **“outros”**._
+>
+> Para mais informações, digite no terminal: **`man chmod`**
+
+**`ssh usuário@host`**
+> _Conecta ao host como usuário (exemplo: **`ssh gnulinuxbrasil@meuservidor`**)._
+
+**`ssh -p porta usuário@host`**
+> _Conecta ao host na porta especificada (substituir **`porta`** pelo número da porta configurada)._
+
+**`ssh-copy-id usuário@host`**
+> _Adiciona a sua chave para o host e usuário daquele host; serve para ativar logins sem senha com uso de chaves._
+
+**`grep sequência arquivos`**
+> _Pesquisa pela sequência nos arquivos (substituir a **`sequência e arquivos`** pelos valores correspondentes à pesquisa)._
+
+**`grep -r sequência dir`**
+> _Pesquisa pela sequência nos arquivos (substituir a **`sequência e arquivos`** pelos valores correspondentes à pesquisa)._
+
+**`grep -r sequência dir`**
+> _Pesquisa recursivamente pela **`sequência`** LinuxLinuxLinux no diretório **`dir`**_
+
+**`comando | grep sequência`**
+> _Pesquisa pela sequência na saída do comando (substituir **`comando`** e **`sequência`** de acordo com os valores a serem buscados)._
+
+**`locate arq`**
+> _Encontra todas as instâncias de um arquivo (substituir a variável **`arq`** pelo nome do arquivo)._
+
+**`date`**
+> _Exibe a data e hora atual._
+
+**`cal`**
+> _Exibe um calendário do mês atual._
+
+**`uptime`**
+> _Exibe o tempo de atividade do sistema._
+
+**`w`**
+> _Exibe quem está online._
+
+**`whoami`**
+> _Exibe como quem você está logado._
+
+**`finger`**
+> _Exibe informações do usuário._
+
+**`uname -a`**
+> _Exibe informações do kernel._
+
+**`cat /porc/cpuinfo`**
+> _Exibe informações da CPU._
+
+**`cat /proc/meminfo`**
+> _Exibe informações da memória._
+
+**`man comando`**
+> _Abre o manual do comando especificado (substituir a variável **`comando`** pelo nome do comando que se quer conhecer)._
+
+**`df`**
+> _Exibe o uso do disco_
+
+**`du`**
+> _Exibe o uso do espaço em um diretório._
+
+**`free`**
+> _Exibe o uso da memória e swap._
+
+**`whereis aplicação`**
+> _Exibe possíveis localizações do aplicativo (substituir **`aplicação`** pelo nome do programa)._
+
+**`which aplicação`**
+> _Exibe que a aplicação irá rodar por omissão (substituir **`aplicação`** pelo nome do programa)._
+
+**`tar cf pacote.tar arqs`**
+> _Cria um pacote TAR (nomeado **`pacote.tar`**) com os arquivos especificados (substituir a variável **`arqs`** pelo nome do arquivo)._
+
+**`tar xf pacote.tar`**
+> _Extrai os arquivos de **“pacote.tar”** (substituir a variável **`pacote.tar`** pelo nome do arquivo)._
+
+
 
 
