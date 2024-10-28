@@ -45,4 +45,77 @@ Porém, antes de executarem os comandos no terminal, lembrem-se da famosa frase 
   ### 4.10. Arquivos e arquivos compactados
   ### 4.11. Pacotes RPM (Red Hat, Fedora e derivados)
   ### 4.12. Pacotes YUM Updater (Red Hat, Fedora e derivados)
-  ### 4.13. 
+  ### 4.13. Pacotes DEB (Debian, Ubuntu e derivados)
+  ### 4.14. Atualizador de pacotes APT (Debian, Ubuntu e derivados)
+  ### 4.15. Exibir o conteúdo de um arquivo
+  ### 4.16. Manipulação de texto
+  ### 4.17. Estabelecer o formato de conversão de arquivos
+  ### 4.18. Análise de sistemas de arquivos
+  ### 4.19. Formatar sistemas de arquivos
+  ### 4.20. Backups
+  ### 4.21. CD-ROM
+  ### 4.22. Redes (LAN e Wi-Fi)
+  ### 4.23. Redes Microsoft Windows (SAMBA)
+  ### 4.24. Firewall (iptables)
+  ### 4.25. Monitoramento e depuração
+  ### 4.26. Dicas e comandos úteis
+
+### 5. Bibliografia
+
+### 6. Redes sociais
+
+## 1.	Guia de referência – Lista de comandos para Linux
+
+### 1.1 Conhecendo a hierarquia do sistema
+
+![Imagem1](https://github.com/user-attachments/assets/825aae89-966e-4806-9b0a-15e2f737dc32)
+
+## 1.2 Atalhos globais
+
+**`Ctrl+C`**
+> Cancela o comando atual em funcionamento
+
+**`Ctrl+Z`**
+> Pausa o comando atual, retorna com "fg" em primeiro plano Linux ou "bg" em segundo plano.
+
+**`Ctrl+D`**
+> Faz o logout da sessão atual (similar ao comando "exit").
+
+**`Ctrl+W`**
+> Apaga uma palavra na linha atual.
+
+**`Ctrl+U`**
+> Apaga a linha inteira.
+
+**`Ctrl+R`**
+> Tecle para Exiber um comando recente.
+
+**`!!`**
+> Repete o último comando.
+
+**`exit`**
+> Faz o logout da sessão atual
+
+## 2.	Dicas úteis para o aprendizado
+
+1. **Digite qualquer comando seguido de `–-help` (Dois traços e a palavra _help_)** para ver a uma descrição detalhada do comando.
+(EX: `wget –help`)
+
+2. Outra forma de conseguir documentação oficial dos comandos Linux é o comando `man` (manual), _Digite `man` seguido do nome do comando_ que você precisa de informação.
+(EX: `man wget`)
+
+3. Se por algum motivo você preferir guardar as informações do `man` (manual) de algum comando em um pendrive ou smartphone em PDF para estudos complementares utilize este comando.
+(EX: **`man -t wget | ps2pdf – wget.pdf`**)
+
+## 3. Lista de comandos
+
+**`ls`**
+>_Lista de diretórios._
+
+**`ls -al`**
+>_Lista de diretórios com exibição de arquivos ocultos._
+
+**`cd dir`**
+> _Muda do diretório atual para o especificado (substituir a variável_ **`dir`** _pelo nome da pasta)._
+
+
