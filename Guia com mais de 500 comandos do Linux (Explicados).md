@@ -283,6 +283,295 @@ Porém, antes de executarem os comandos no terminal, lembrem-se da famosa frase 
 **`tar xf pacote.tar`**
 > _Extrai os arquivos de **“pacote.tar”** (substituir a variável **`pacote.tar`** pelo nome do arquivo)._
 
+**`tar czf pacote.tar.gz arqs`**
+> _Cria um pacote TAR (nomeado **`pacote.tar.gz`**) com compressão GZip._
+
+**`tar xzf pacote.tar.gz`**
+> _Extrai um pacote TAR (nomeado **`pacote.tar.gz`**) com compressão GZip._
+
+**`tar cjf pacote.tar.bz2`**
+> _Cria um pacote TAR (nomeado **`pacote.tar.bz2`**) com compressão BZip2._
+
+**`tar xjf pacote.tar.bz2`**
+> _Extrai um pacote TAR (nomeado **`pacote.tar.gz`**) com compressão BZip2._
+
+**`gzip arq`**
+> _Compacta um arquivo e o renomeia para arq.gz (substituir a variável **`arq`** pelo nome do arquivo)._
+
+**`gzip -d arq.gz`**
+> _Descompacta arq.gz para um arquivo (substituir a variável **`arq.gz`** pelo nome do arquivo)._
+
+**`ping host`**
+> _Envia um pacote ICMP (ping) para o host e Exibe o resultado (substituir a variável **`host`** pelo domínio de um site ou o número IP)._
+
+**`whois domínio`**
+> _Retorna informações sobre o domínio (substituir a variável **`domínio`** pelo endereço de um site ou o número IP)._
+
+**`dig host`**
+> _Retorna informações de DNS para o domínio (substituir a variável **`host`** pelo domínio de um site ou o número IP)._
+
+**`ListAllCommands | grep searchstr`**
+> _Instalação a partir do código fonte; os comandos devem ser digitados na sequência em um terminal, um de cada vez._
+
+**`dig -x host`**
+> _Exibe o retorno reverso para um host (substituir a variável **`host`** pelo domínio de um site ou o número IP)._
+
+**`wget arq`**
+> _Faz o download do arquivo **“arq”** (substituir a variável **`arq pelo`** endereço online do arquivo)._
+
+**`wget -c arq`**
+> _Continua o download interrompido de um arquivo **“arq”** (substituir a variável **`arq`** pelo endereço online do arquivo)._
+
+**Comandos de instaladores**
+
+* ./configure
+* make
+* make install
+
+**`dpkg -i pacote.deb`**
+> _Instala um pacote DEB (distros Debian) (substituir a variável **`pacote.deb`** pelo nome do pacote de programa)._
+
+**`rpm -Uvh pacote.rpm`**
+> _Instala um pacote RPM (Distros que utilizam RPM) (substituir a variável **`pacote.rpm`** pelo nome do pacote de programa)._
+
+## 4. Guia de referência completo – Comandos avançados do terminal Linux
+
+# 4.1. Informações do sistema Linux
+
+**`arch`**
+> _Exibe a arquitetura da máquina (1)._
+
+**`uname -m`**
+> _Exibe a arquitetura da máquina (2)._
+
+**`uname -r`**
+> _Exibe versão do kernel usada._
+
+**`dmidecode -q`**
+> _Exibe os componentes do sistema (hardware)._
+
+**`hdparm -i /dev/hda`**
+> _Exibe as características de um disco rígido._
+
+**`hdparm -tT /dev/das`**
+> _Executa teste de leitura em um disco rígido._
+
+**`cat /proc/cpuinfo`**
+> _Exibe informações da CPU._
+
+**`cat /proc/interrupts`**
+> _Exibe interrupções._
+
+**`cat /proc/meminfo`**
+> _Verifica a utilização de memória._
+
+**`cat /proc/swaps:df -h`**
+> _Exibe o tamanho dos arquivos e diretórios ordenados por tamanho._
+
+**`ls -lSr |more`**
+> _Estima o espaço usado pelo diretório **‘dir1’**._
+
+**`du -sh dir1`**
+> _Exibe o tamanho dos arquivos e diretórios ordenados por tamanho._
+
+**`du -sk * | sort -rn`**
+> _Exibe o espaço usado por pacotes .rpm instalados e organizados pelo tamanho (Fedora, Red Hat e outros)._
+
+**`rpm -q -a –qf ‘%10{SIZE}t%{NAME}n’ | sort -k1,1n`**
+> _Exibe o espaço usado por pacotes instalados, organizado pelo tamanho (Debian, Ubuntu e outros)._
+
+**`dpkg-query -W -f=’${Installed-Size;10}t${Package}n’ | sort -k1,1n`**
+> _Exibe arquivos de swap._
+
+**`cat /proc/version`**
+_Exibe a versão do kernel._
+
+**`cat /proc/net/dev`**
+> _Exibe estatísticas e adaptadores de rede._
+
+**`cat /proc/mounts`**
+> _Exibe o sistema de arquivos montado._
+
+**`lspci -tv`**
+> _Exibe os dispositivos PCI._
+
+**`lsusb -tv`**
+> _Exibe os dispositivos USB._
+
+**`date`**
+>  _Exibe a data do sistema._
+
+**`cal 2024`**
+> _Visualiza o calendário de 2024._
+
+**`cal 10 2016`*
+> _Exibe o calendário para o mês de outubro de 2024._
+
+**`date 041217002016.00`**
+> _Define manuelmente o mês, dia, hora, minuto, ano e opcionalmente os segundos com o formato específico **`MMDDhhmmAAAA.ss`**._
+
+**`clock -w`**
+> _Salva as alterações para a data na BIOS._
+
+# 4.2. Desligar (Reinicialização do sistema ou logout)
+
+**`shutdown -h now`**
+> _Desliga o sistema (1)._
+
+**`shutdown -h minutos`**
+> _Desliga o sistema de acordo com o minuto selecionado (EX.: **`shutdown -h 30`** , desliga em 30 minutos)._
+
+**`init 0`**
+> _Desliga o sistema (2)._
+
+**`telinit 0`**
+> _Desliga o sistema (3)._
+
+**`halt`**
+> _Desliga o sistema (4)._
+
+**`shutdown -r mensagem:`**
+> _Para enviar uma mensagem aos usuários afetados pelo desligamento, use o comando desta forma: **`sudo shutdown -r 30 "O sistema será reiniciado em 30 minutos”`**
+
+**`shutdown -c`**
+> _Cancela um desligamento do sistema planejado._
+
+**`shutdown -r now`**
+> _Reinicia (1)._
+
+**`reboot`**
+> _Reinicia (2)._
+
+**`logout`**
+> _Fecha a sessão._
+
+# 4.3. Arquivos e diretórios
+
+**`cd /home`**
+> _Digite o diretório em **`home`**._
+
+**`cd ..`**
+> _Volta um nível._
+
+**`cd ../..`**
+> _Volta 2 níveis._
+
+**`cd`**
+> _Vai para o diretório de raíz._
+
+**`cd ~user1`**
+> _Vai para o diretório de **`user1`**._
+
+**`cd –`**
+> _Volta para o diretório anterior._
+
+**`pwd`**
+> _Exibe o caminho do diretório de trabalho._
+
+**`ls`**
+> _Consulta os arquivos em um diretório._
+
+**`ls -F`**
+> _Consulta os arquivos em um diretório._
+
+**`ls -l`**
+> _Exibe detalhes de arquivos e pastas em um diretório._
+
+**`ls -a`**
+> _Exibe arquivos ocultos._
+
+**`ls *[0-9]*`**
+> _Exibe arquivos e pastas que contêm números._
+
+**`tree`**
+> _Exibe arquivos e pastas em uma árvore a partir da raiz. (1)_
+
+**`lstree`**
+> _Exibe arquivos e pastas em uma árvore a partir da raiz. (2)_
+
+**`mkdir dir1`**
+> _Cria uma pasta ou diretório com nome **‘dir1’**._
+
+**`mkdir dir1 dir2`**
+> _Cria duas pastas ou diretórios simultaneamente (criando dois diretórios ao mesmo tempo)._
+
+**`mkdir -p /tmp/dir1/dir2`**
+> _Cria uma árvore de diretório._
+
+**`rm -f file1`**
+> _Exclui o arquivo chamado **‘file1’**._
+
+**`rmdir dir1`**
+> _Exclui a pasta chamada **‘dir1’**._
+
+**`rm -rf dir1`**
+> _Exclui uma pasta chamada **‘dir1’** com seu conteúdo forçadamente._
+
+**`rm -rf dir1 dir2`**
+> _Exclui duas pastas (diretórios) com seu conteúdo forçadamente._
+
+**`mv dir1 new_dir`**
+> _Renomeia ou move um arquivo ou pasta (diretório)._
+
+**`cp file1`**
+> _Copia um arquivo._
+
+**`cp file1 file2`**
+> _Copia os dois arquivos ao mesmo tempo._
+
+**`cp dir /*.`**
+> _Copia todos os arquivos de um diretório dentro do diretório de trabalho atual._
+
+**`cp -a /tmp/dir1.`**
+> _Copia um diretório dentro do diretório de trabalho atual._
+
+**`cp -a dir1`**
+> _Copia um diretório._
+
+**`cp -a dir1 dir2`**
+> _Faz uma cópia recursiva e preserva a estrutura e atributos dos arquivos no diretório de destino_
+
+**`ln -s file1 lnk1`**
+> _Cria um link simbólico para o arquivo ou diretório._
+
+**`ln file1 lnk1`**
+> _Cria um vínculo físico para o arquivo ou diretório._
+
+**`touch -t 0712250000 file1`**
+> _Modifica as datas de acesso e modificação do arquivo **`file1`** para a data e hora especificadas._
+
+file file1
+Saída (despejo na tela) do tipo mime de um arquivo de texto.
+
+iconv -l
+Listas de cifras conhecidas.
+
+iconv -f fromEncoding -t toEncoding inputFile > outputFile
+Cria uma nova forma de arquivo de entrada assumindo que está codificado em fromEncoding e converte para ToEncoding.
+
+find . -maxdepth 1 -name *.jpg -print -exec convert ”{}” -resize 80×60 “thumbs/{}” \;
+Agrupa arquivos dimensionados no diretório atual e os envia aos diretórios de visualização em miniaturas (requer o conversor do ImagemagicK).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
