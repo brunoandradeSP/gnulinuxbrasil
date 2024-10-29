@@ -6,7 +6,7 @@ Por: [Bruno Andrade](https://www.linkedin.com/in/brunobredaandrade/) (GNU/Linux 
 
 ## Introdução
 
-Neste documento, irá encontrar mais de 500 comandos via terminal do Linux. Todos bem explicados da forma como funcionam e o que executam. Totalmente em português, com uma linguagem simples e objetiva que pode ser compreendida por todos os usuários (desde o nível mais simples ao avançado).
+Neste documento, você encontrará mais de 500 comandos via terminal do Linux. Todos bem explicados da forma como funcionam e o que executam. Totalmente em português, com uma linguagem simples e objetiva que pode ser compreendida por todos os usuários (desde o nível mais simples ao avançado).
 
 Esta é uma oportunidade de não usar somente a interface gráfica para executar os comandos, e sim ter o domínio do terminal. Aumentando ainda mais o seu conhecimento no universo Linux. Afinal, em certos momentos, precisamos de um conhecimento a mais para executarmos determinadas tarefas.
 
@@ -540,18 +540,52 @@ _Exibe a versão do kernel._
 **`touch -t 0712250000 file1`**
 > _Modifica as datas de acesso e modificação do arquivo **`file1`** para a data e hora especificadas._
 
-file file1
-Saída (despejo na tela) do tipo mime de um arquivo de texto.
+**`file file1`**
+> _Exibe o tipo e informações do arquivo **`file1`** na tela._
 
-iconv -l
-Listas de cifras conhecidas.
+**`file -i file1`**
+> _Exibe o tipo MIME de **`file1`**, como **`text/plain`** ou **`image/jpeg`*._
 
-iconv -f fromEncoding -t toEncoding inputFile > outputFile
-Cria uma nova forma de arquivo de entrada assumindo que está codificado em fromEncoding e converte para ToEncoding.
+**`iconv -l`**
+> _Listas de cifras conhecidas._
 
-find . -maxdepth 1 -name *.jpg -print -exec convert ”{}” -resize 80×60 “thumbs/{}” \;
-Agrupa arquivos dimensionados no diretório atual e os envia aos diretórios de visualização em miniaturas (requer o conversor do ImagemagicK).
+**`iconv -f fromEncoding -t toEncoding inputFile > outputFile`**
+> _Cria uma nova forma de arquivo de entrada assumindo que está codificado em fromEncoding e converte para ToEncoding._
 
+**`find . -maxdepth 1 -name *.jpg -print -exec convert ”{}” -resize 80×60 “thumbs/{}” \;`**
+> _Agrupa arquivos dimensionados no diretório atual e os envia aos diretórios de visualização em miniaturas (requer o conversor do ImagemagicK)._
+
+# 4.4. Encontrar arquivos
+
+**`find / -name file1`**
+> _Busca de um arquivo ou diretório da raiz do sistema._
+
+**`find / -user user1`**
+> _Encontra arquivos e diretórios pertencentes ao usuário **‘user1’**._
+
+**`find /home/user1 -name \*.bin`**
+> _Procura arquivos com extensão **‘. bin’** no diretório **‘/ home/user1’**._
+
+**`find /usr/bin -type f -atime +100`**
+> _Pesquisa arquivos binários não utilizados nos últimos 100 dias._
+
+**`find /usr/bin -type f -mtime -10`**
+> _Pesquisa arquivos criados ou alterados nos últimos 10 dias._
+
+**`find / -name \*.rpm -exec chmod 755 ‘{}’ \;`**
+> _Procura arquivos com extensão **‘. rpm’** e modifica permissões._
+
+**`find / -xdev -name \*.rpm`**
+> _Procura arquivos com extensão **‘. rpm’** ignorando a mídia removível, como CD-ROM, pen-drive, etc…_
+
+**`locate \*.ps`**
+> _Encontra arquivos com a extensão **‘. ps’** primeiramente executado com o comando **“updatedb”**._
+
+**`whereis halt`**
+> _Exibe a localização de um arquivo binário, a ajuda ou a fonte. Neste caso ele pergunta onde está o comando **‘halt’**._
+
+**`which halt`**
+> _Exibe o caminho completo (o caminho completo) para um binário / executável._
 
 
 
