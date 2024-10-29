@@ -70,7 +70,7 @@ Porém, antes de executarem os comandos no terminal, lembrem-se da famosa frase 
 
 ![Imagem1](https://github.com/user-attachments/assets/825aae89-966e-4806-9b0a-15e2f737dc32)
 
-## 1.2 Atalhos globais
+### 1.2 Atalhos globais
 
 **`Ctrl+C`**
 > Cancela o comando atual em funcionamento
