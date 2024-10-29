@@ -585,7 +585,7 @@ _Exibe a versão do kernel._
 > _Exibe a localização de um arquivo binário, a ajuda ou a fonte. Neste caso ele pergunta onde está o comando **‘halt’**._
 
 **`which halt`**
-> _Exibe o caminho completo (o caminho completo) para um binário / executável._
+> _Exibe o caminho completo para um binário / executável._
 
 
 
