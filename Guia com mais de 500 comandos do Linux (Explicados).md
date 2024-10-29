@@ -60,9 +60,9 @@ Porém, antes de executarem os comandos no terminal, lembrem-se da famosa frase 
   ### 4.25. Monitoramento e depuração
   ### 4.26. Dicas e comandos úteis
 
-### 5. Bibliografia
+## 5. Bibliografia
 
-### 6. Redes sociais
+## 6. Redes sociais
 
 ## 1.	Guia de referência – Lista de comandos para Linux
 
@@ -336,7 +336,7 @@ Porém, antes de executarem os comandos no terminal, lembrem-se da famosa frase 
 
 ## 4. Guia de referência completo – Comandos avançados do terminal Linux
 
-# 4.1. Informações do sistema Linux
+### 4.1. Informações do sistema Linux
 
 **`arch`**
 > _Exibe a arquitetura da máquina (1)._
@@ -413,7 +413,7 @@ _Exibe a versão do kernel._
 **`clock -w`**
 > _Salva as alterações para a data na BIOS._
 
-# 4.2. Desligar (Reinicialização do sistema ou logout)
+### 4.2. Desligar (Reinicialização do sistema ou logout)
 
 **`shutdown -h now`**
 > _Desliga o sistema (1)._
@@ -445,7 +445,7 @@ _Exibe a versão do kernel._
 **`logout`**
 > _Fecha a sessão._
 
-# 4.3. Arquivos e diretórios
+### 4.3. Arquivos e diretórios
 
 **`cd /home`**
 > _Digite o diretório em **`home`**._
@@ -555,7 +555,7 @@ _Exibe a versão do kernel._
 **`find . -maxdepth 1 -name *.jpg -print -exec convert ”{}” -resize 80×60 “thumbs/{}” \;`**
 > _Agrupa arquivos dimensionados no diretório atual e os envia aos diretórios de visualização em miniaturas (requer o conversor do ImagemagicK)._
 
-# 4.4. Encontrar arquivos
+### 4.4. Encontrar arquivos
 
 **`find / -name file1`**
 > _Busca de um arquivo ou diretório da raiz do sistema._
@@ -587,8 +587,40 @@ _Exibe a versão do kernel._
 **`which halt`**
 > _Exibe o caminho completo para o executável do comando **`halt`**, se estiver no PATH do usuário._
 
+### 4.5. Trabalhando com sistema de arquivos
 
+**`mount /dev/hda2 /mnt/hda2`**
+> _Monta um disco chamado `hda2`. Primeiro, verifique a existência do diretório **`‘/ mnt/hda2’`*; Se você não possuir, você deve criá-lo._
 
+**`umount /dev/hda2`**
+> _Remove um disco chamado `hda2`. Em primeiro lugar, do ponto de **`‘ / mnt/hda2`**._
+
+**`fuser -km /mnt/hda2`**
+> _Força a remoção quando o dispositivo está ocupado._
+
+**`umount -n /mnt/hda2`**
+> _Executa a remoção sem ler o arquivo/etc/MTAB. Útil quando o arquivo é somente leitura ou o disco rígido está cheio._
+
+**`mount /dev/fd0 /mnt/floppy`**
+> _Monta um disco flexível (disquete)._
+
+**`mount /dev/cdrom /mnt/cdrom`**
+> _Monta um cdrom / dvdrom._
+
+**`mount /dev/hdc /mnt/cdrecorder`**
+> _Monta um cd gravável ou um dvdrom._
+
+**`mount /dev/hdb /mnt/cdrecorder`**
+> _Monta um cd gravável / dvdrom (um dvd)._
+
+**`mount -o loop file.iso /mnt/cdrom`**
+> _Monta um arquivo ou uma imagem iso._
+
+**`mount -t vfat /dev/hda5 /mnt/hda5`**
+> _Monta um sistema de comandos em arquivos FAT32._
+
+**`mount /dev/sda1 /mnt/usbdisk`**
+> _Monta uma memória ou um pen-drive USB (sem especificar o tipo de sistema de arquivos)._
 
 
 
