@@ -622,6 +622,84 @@ _Exibe a versão do kernel._
 **`mount /dev/sda1 /mnt/usbdisk`**
 > _Monta uma memória ou um pen-drive USB (sem especificar o tipo de sistema de arquivos)._
 
+### 4.6. Espaço em disco
+
+**`df -h`**
+> _Exibe o tamanho dos arquivos e diretórios ordenados por tamanho._
+
+**`ls -lSr |more`**
+> _Estima o espaço usado pelo diretório **‘dir1’**._
+
+**`du -sh dir1`**
+> _Exibe o tamanho dos arquivos e diretórios ordenados por tamanho._
+
+**`du -sk * | sort -rn`**
+> _Exibe o espaço usado por pacotes .rpm instalados, organizados pelo tamanho (Fedora, Red Hat e outros)._
+
+**`rpm -q -a –qf ‘%10{SIZE}t%{NAME}n’ | sort -k1,1n`**
+> _Exibe o espaço usado por pacotes instalados e organizados pelo tamanho (Debian, Ubuntu e outros)._
+
+**`dpkg-query -W -f=’${Installed-Size;10}t${Package}n’ | sort -k1,1n > g`**
+> _Exibe uma lista de todos os pacotes instalados e seus respectivos tamanhos (em KB) em ordem crescente de espaço ocupado, no Debian e derivados, e salva o resultado no arquivo `g`_
+
+### 4.7. Usuários e grupos
+
+**`groupadd nome_do_grupo`**
+> _Cria um novo grupo._
+
+**`groupdel nome_do_grupo`**
+> _Exclui um grupo._
+
+**`groupmod -n novo_nome_do_grupo viejo_nome_do_novo_grupo`**
+> _Renomeia um grupo._
+
+**`useradd -c “Name Surname ” -g admin -d /home/user1 -s /bin/bash user1`**
+> _Cria um novo usuário *“admin”* do grupo._
+
+**`useradd user1`**
+> _Cria um novo usuário._
+
+**`userdel -r user1`**
+> _Exclui um usuário (`‘-r’` elimina o diretório Home)._
+
+**`usermod -c “User FTP” -g system -d /ftp/user1 -s /bin/nologin user1`**
+> _Altera os atributos do usuário._
+
+**`passwd`**
+> _Altera a senha._
+
+**`passwd user1`**
+> _Altera a senha do usuário (apenas pelo root)._
+
+**`chage -E 2024-11-04 user1`**
+> _Define um limite de tempo para a senha do usuário. Neste caso, ele diz que a chave expira em 04 de Novembro de 2024._
+
+**Informações do sistema Linux**
+
+* **pwck**
+** Verifica a sintaxe correta ‘/ etc/passwd’ arquivo formato e a existência de usuários.
+
+* **grpck**
+**Verifica a sintaxe correta e formato do arquivo ‘/ etc/grupo’ e a existência de grupos.
+
+* newgrp group_name:
+** Registra um novo grupo para alterar o grupo padrão dos arquivos recém-criados.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
