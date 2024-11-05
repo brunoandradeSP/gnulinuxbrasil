@@ -676,14 +676,14 @@ _Exibe a versão do kernel._
 
 **Informações do sistema Linux**
 
-* **pwck**
-** Verifica a sintaxe correta ‘/ etc/passwd’ arquivo formato e a existência de usuários.
+* **`pwck`**
+> _Verifica a sintaxe correta **‘/ etc/passwd’** arquivo formato e a existência de usuários._
 
-* **grpck**
-**Verifica a sintaxe correta e formato do arquivo ‘/ etc/grupo’ e a existência de grupos.
+* **`grpck`**
+> _Verifica a sintaxe correta e formato do arquivo **‘/ etc/grupo’** e a existência de grupos._
 
-* newgrp group_name:
-** Registra um novo grupo para alterar o grupo padrão dos arquivos recém-criados.
+* **`newgrp group_name:`**
+> _Registra um novo grupo para alterar o grupo padrão dos arquivos recém-criados._
 
 
 
