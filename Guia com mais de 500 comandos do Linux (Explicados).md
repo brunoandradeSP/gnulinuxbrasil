@@ -1,4 +1,4 @@
-# Guia com mais de 500 comandos do Linux (Explicados)
+# Guia com mais de 500 "comandos do Linux" (Explicados)
 
 ![Imagem1](https://github.com/user-attachments/assets/6f4de205-c54d-47df-a803-fcae7861d59b)
 
@@ -20,9 +20,25 @@ Esta apostila é de distribuição gratuita e pode ser compartilhada e baixada p
 
 Porém, antes de executarem os comandos no terminal, lembrem-se da famosa frase do modo root: _"Com grandes poderes, vêm grandes responsabilidades"_ - Stan Lee.
 
+## Disclaimer
+
+Se você é novo no mundo do Linux, saiba que o Linux não é um sistema operacional; ele é um kernel. No entanto, costumamos chamar o “Linux” de sistema operacional para simplificar as coisas.
+
+Quando você usa comandos no Linux, o que você realmente está fazendo é escrever instruções em uma linha de comando que serão interpretadas por um shell (como o Bash, Zsh, etc.). O shell então interpreta esses comandos e, com base neles, executa programas ou scripts específicos.
+
+Portanto, o processo envolve três partes principais:
+
+* **Shell:** Ele interpreta a linha de comando que você insere.
+* **Linha de comando**: Esse é o conjunto de instruções que você digita, que podem incluir comandos e argumentos.
+* **Programas executados:** São os aplicativos ou scripts que realizam as tarefas solicitadas.
+
+A linha de comando, por exemplo, `ls -la /home`, é interpretada pelo shell, que então chama o programa `ls` com as opções e argumentos especificados `(-la /home)` e exibe o resultado.
+
 ## Sumário
 
 ### Introdução
+
+### Disclaimer
 
 ### 1. Guia de referência – Lista de comandos para Linux
   ### 1.1 Conhecendo a hierarquia do sistema
@@ -685,38 +701,76 @@ _Exibe a versão do kernel._
 * **`newgrp group_name:`**
 > _Registra um novo grupo para alterar o grupo padrão dos arquivos recém-criados._
 
+### 4.8. Permissões de arquivos (+ = Adiciona e - = Remove permissões)
 
+**`ls -lh`**
+> _Exibe permissões._
 
+**`ls /tmp | pr -T5 -W$COLUMNS`**
+> _Divide o terminal em 5 colunas._
 
+**`chmod ugo+rwx directory1`**
+> _Define permissões de leitura (r), gravação (w) e execução (x) para o dono (u), grupo (g) e outros (o) no diretório **‘directory1’**._
 
+**`chmod go-rwx directory1`**
+> _Remove as permissões de leitura (r), gravação (w) e execução (x) do grupo (g) e dos outros (o) no diretório **‘directory1’**._
 
+**`chown user1 file1`**
+> _Altera o proprietário de um arquivo._
 
+**`chown -R user1 directory1`**
+> _Altera o proprietário de um diretório e todos os arquivos e diretórios contidos dentro._
 
+**`chgrp group1 file1`**
+> _Altera o grupo de **‘file1’**._
 
+**`chown user1:Grupo1 user1`**
+> _Altera o dono (usuário) para **‘user1’** e o grupo para **‘Grupo1’** no arquivo ou diretório **‘user1’**._
 
+**`find / -perm -u+s`**
+> _Ver todos os arquivos com sistema SUID configurado._
 
+**`chmod u+s /bin/file1`**
+> _Define o bit SUID em um arquivo binário. O usuário que está executando esse arquivo adquire os mesmos privilégios como proprietário._
 
+**`chmod u-s /bin/file1`**
+> _Desabilita o bit SUID em um arquivo binário._
 
+**`chmod g+s /home/public`**
+> _Define o SGID bit em um diretório – semelhante ao SUID, mas para o diretório._
 
+**`chmod g-s /home/public`**
+> _Desativa o bit SGID em um diretório._
 
+**`chmod o+t /home/public`**
+> _Conjunto STIKY bit em um diretório. Permite a exclusão de arquivos somente para os legítimos proprietários._
 
+**`chmod o-t /home/public`**
+> _Desativa STIKY bit em um diretório._
 
+### 4.9. Atributos especiais de arquivo: (+ = Adiciona e - = Remove permissões)
 
+**`chattr +a file1`**
+> _Define o atributo "append-only" (somente acrescentar) no arquivo **‘file1’**._
 
+**`chattr +c file1`**
+> Define o atributo de compressão no arquivo **‘file1’**, permitindo que ele seja compactado e descompactado automaticamente._
 
+**`chattr +d file1`**
+> _Define o atributo **"no dump"** no arquivo **‘file1’**, instruindo programas de backup a ignorarem esse arquivo._
 
+**`chattr +i file1`**
+> _Torna o arquivo inalterado, portanto não pode ser excluído, alterado, renomeado ou vinculado._
 
+**`chattr +s file1`**
+> _Permite que um arquivo possa ser excluído com segurança._
 
+**`chattr +S file1`**
+> _Define o atributo de **"síncrono"** no arquivo **‘file1’**, garantindo que, sempre que o arquivo for modificado, as alterações sejam imediatamente gravadas no disco de forma síncrona._
 
+**`chattr +u file1`**
+> _Define o atributo **"undelete"** no arquivo **‘file1’**, permitindo que o conteúdo do arquivo seja recuperado caso ele seja excluído._
 
-
-
-
-
-
-
-
-
-
-
+**`lsattr`**
+> _Exibe atributos especiais._
 
