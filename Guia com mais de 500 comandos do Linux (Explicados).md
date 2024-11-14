@@ -420,7 +420,7 @@ _Exibe a versão do kernel._
 **`cal 2024`**
 > _Visualiza o calendário de 2024._
 
-**`cal 10 2016`*
+**`cal 10 2016`**
 > _Exibe o calendário para o mês de outubro de 2024._
 
 **`date 041217002016.00`**
