@@ -774,3 +774,684 @@ _Exibe a versão do kernel._
 **`lsattr`**
 > _Exibe atributos especiais._
 
+### 4.10. Arquivos e arquivos compactados
+
+**`bunzip2 file1.bz2`**
+> _Descompacta um arquivo chamado **‘file1.bz2’**._
+
+**`bzip2 file1`**
+> _Comprime um arquivo chamado **‘file1’**._
+
+**`gunzip file1.gz`**
+> _Descompacta um arquivo chamado **‘file1.gz’**._
+
+**`gzip file1`**
+> _Comprime um arquivo chamado **‘file1’**._
+
+**`gzip -9 file1`**
+> _Comprime com compressão máxima._
+
+**`rar a file1.rar test_file`**
+> _Cria um arquivo com o rar chamado **‘file1.rar’**._
+
+**`rar a file1.rar file1 file2 dir1`**
+> _Comprime **‘arquivo1’**, **‘arquivo2’** e **‘dir1’* simultaneamente._
+
+**`rar x file1.rar`**
+> _Descompacta o arquivo rar._
+
+**`unrar x file1.rar`**
+> _Descompacta o arquivo rar._
+
+**`tar -cvf archive.tar file1`**
+> _Cria um tarball descompactado._
+
+**`tar -cvf archive.tar file1 file2 dir1`**
+> _Cria um arquivo contendo **‘arquivo1’**, **‘file2’** e **‘dir1’**._
+
+**`tar -tf archive.tar`**
+> _Exibi o conteúdo de um arquivo._
+
+**`tar -xvf archive.tar`**
+> _Extrai um arquivo tar._
+
+**`tar -xvf archive.tar -C /tmp`**
+> _Extrai um tarball em / tmp._
+
+**`tar -cvfj archive.tar.bz2 dir1`**
+> _Cria um arquivo tar compactado no bzip2._
+
+**`tar -xvfj archive.tar.bz2`**
+> _Descompacta um arquivo compactado do bzip2 tar_
+
+**`tar -cvfz archive.tar.gz dir1`**
+> _Cria um arquivo tar compactado em gzip._
+
+**`tar -xvfz archive.tar.gz`**
+> _Descompacta um arquivo tar do gzip compactado._
+
+**`zip file1.zip file1`**
+> _Cria um arquivo compactado zip._
+
+**`zip -r file1.zip file1 file2 dir1`**
+> _Compressão .zip de vários arquivos e diretórios simultaneamente._
+
+**`unzip file1.zip`**
+> _Descompacta um arquivo zip._
+
+### 4.11. Pacotes RPM (Red Hat, Fedora e derivados)
+
+**`rpm -ivh package.rpm`**
+> _Instala um pacote rpm._
+
+**`rpm -ivh –nodeeps package.rpm`**
+> _Instala um pacote rpm e ignora solicitações de dependências._
+
+**`rpm -U package.rpm`**
+> _Atualiza um pacote rpm sem alterar a configuração dos arquivos._
+
+**`rpm -F package.rpm`**
+> _Atualiza um pacote rpm somente se ele **“Comandos”** estiver instalado._
+
+**`rpm -e package_name.rpm`**
+> _Remove um pacote rpm._
+
+**`rpm -qa`**
+> _Exibe todos os pacotes rpm instalados no sistema._
+
+**`rpm -qa | grep httpd`**
+> _Exibe todos os rpm de pacotes com o nome **“httpd”**._
+
+**`rpm -qi package_name`**
+> _Informações sobre um pacote específico instalado._
+
+**`rpm -qg “System Environment/Daemons”`**
+> _Exibe um grupo software pacotes rpm._
+
+**`rpm -ql package_name`**
+> _Exibe lista de arquivos fornecidos por um pacote rpm instalado._
+
+**`rpm -qc package_name`**
+> _Exibe a lista de arquivos, dada por uma configuração de pacote rpm instalado._
+
+**`rpm -q package_name –whatrequires`**
+> _Exibe lista de dependências que são solicitados para um pacote rpm._
+
+**`rpm -q package_name –whatprovides`**
+> _Exibe a capacidade fornecida por um pacote rpm._
+
+**`rpm -q package_name –scripts`**
+> _Exibe scripts começados durante a remoção da instalação._
+
+**`rpm -q package_name –changelog`**
+> _Exibe o histórico das revisões de um pacote rpm._
+
+**`rpm -qf /etc/httpd/conf/httpd.conf`**
+> _Verifica qual pacote rpm pertence a um determinado arquivo._
+
+**`rpm -qp package.rpm -l`**
+> _Exibe a lista de arquivos fornecidos por um rpm do pacote que ainda não foi instalado._
+
+**`rpm –import /media/cdrom/RPM-GPG-KEY`**
+> _Importa a assinatura digital chave pública._
+
+**`rpm –checksig package.rpm`**
+> _Verifica a integridade de um pacote rpm._
+
+**`rpm -qa gpg-pubkey`**
+> _Verifica a integridade de todos os pacotes rpm instalados._
+
+**`rpm -V package_name`**
+> _Verifica o tamanho do arquivo, licenças, tipos, proprietário, grupo, exame de integridade, resumo de MD5 e última modificação._
+
+**`rpm -Va`**
+> _Verifica todos os pacotes rpm instalados no sistema. Use com cuidado._
+
+**`rpm -Vp package.rpm`**
+> _Verifica se um pacote instalado ainda não é rpm._
+
+**`rpm2cpio package.rpm | cpio –extract –make-directories *bin*`**
+> _Extrai o arquivo executável de um pacote rpm._
+
+**`rpm -ivh /usr/src/redhat/RPMS/arch/package.rpm`**
+> _Instala um pacote construído a partir de um rpm fonte._
+
+**`rpmbuild –rebuild package_name.src.rpm`**
+> _Constrói um pacote rpm a partir de um rpm fonte._
+
+### 4.12. Pacotes YUM Updater (Red Hat, Fedora e derivados)
+
+**`yum install package_name`**
+> _Baixa e instala um pacote rpm._
+
+**`yum localinstall package_name.rpm`**
+> _Irá instalar um RPM e vai tentar resolver todas as dependências para você, usando seus repositórios._
+
+**`yum update package_name.rpm`**
+> _Atualiza todos os pacotes rpm instalados no sistema._
+
+**`yum update package_name`**
+> _Upgrade / atualiza um pacote rpm._
+
+**`yum remove package_name`**
+> _Remove um pacote rpm._
+
+**`yum list`**
+> _Lista todos os pacotes instalados no sistema._
+
+**`yum search package_name`**
+> _Encontra um pacote no repositório rpm._
+
+**`yum clean packages`**
+> _Limpa um cache de rpm, apagando os pacotes baixados._
+
+**`yum clean headers`**
+> _Exclui todo o cabeçalho de arquivos que o sistema usa para resolver a dependência._
+
+**`yum clean all`**
+> _Remove os arquivos de cache e o cabeçalho do pacote._
+
+### 4.13. Pacotes DEB (Debian, Ubuntu e derivados)
+
+**`dpkg -i package.deb’`**
+> _Instala / atualiza um pacote deb._
+
+**`dpkg -r package_name`**
+> _Remove um deb para o pacote do sistema._
+
+**`dpkg -l`**
+> _Exibe todos os pacotes deb instalados no sistema._
+
+**`dpkg -l | grep httpd`**
+> _Exibe todos os pacotes deb com o nome **“httpd”**._
+
+**`dpkg -s package_name`**
+> _Informações sobre um pacote específico instalado no seu sistema._
+
+**`dpkg -L package_name`**
+> _Exibe lista de arquivos fornecidos por um pacote instalado no sistema._
+
+**`dpkg –contents package.deb`**
+> _Exibe uma lista de arquivos fornecidos por um pacote não instalado ainda._
+
+**`dpkg -S /bin/ping`**
+> _Verifica qual pacote pertence um determinado arquivo._
+
+### 4.14. Atualizador de pacotes APT (Debian, Ubuntu e derivados)
+
+**`apt-get install package_name`**
+> _Instala / atualiza um pacote deb._
+
+**`apt-cdrom install package_name`**
+> _Instala / atualiza um pacote deb do cdrom._
+
+**`apt-get update`**
+> _Atualiza a lista de pacotes._
+
+**`apt-get upgrade`**
+> _Atualiza todos os pacotes instalados._
+
+**`apt-get remove package_name`**
+> _Remove a instalação de um pacote deb do sistema._
+
+**`apt-get purge program_name`**
+> _Remove a instalação de um programa do sistema._
+
+**`apt-get check`**
+> _Verifica se as resoluções das dependências estão corretas._
+
+**`apt-get clean`**
+> _Limpa o cache de pacotes baixados._
+
+**`apt-cache search searched-package`**
+> _Retorna a lista de pacotes que corresponde à série **‘pacotes’**._
+
+### 4.15. Exibir o conteúdo de um arquivo
+
+**`cat file1`**
+> _Exibe o conteúdo de um arquivo a partir da primeira linha._
+
+**`tac file1`**
+> _Exibe o conteúdo de um arquivo a partir da última linha._
+
+**`more file1`**
+> _Exibe o conteúdo ao longo de um arquivo._
+
+**`less file1`**
+> _Semelhante o comando **‘more’** mas permite que você salve o arquivo, bem como o movimento para trás._
+
+**`head -2 file1`**
+> _Exibe as duas primeiras linhas de um arquivo._
+
+**`tail -2 file1`**
+> _Exibe as duas últimas linhas de um arquivo._
+
+**`tail -f /var/log/messages`**
+> _Exibe em tempo real o que foi adicionado ao arquivo._
+
+### 4.16. Manipulação de texto
+
+**`cat file1 file2 .. | command <> file1_in.txt_or_file1_out.txt`**
+> _Sintaxe geral para a manipulação de texto usando o tubo, STDIN e STDOUT._
+
+**`cat file1 | command( sed, grep, awk, grep, etc…) > result.txt`**
+> _Sintaxe geral para manipular um texto de um arquivo e escrever os resultados para um novo arquivo._
+
+**`cat file1 | command( sed, grep, awk, grep, etc…) » result.txt`**
+> _Sintaxe geral para manipular um texto de um arquivo e adicionar o resultado em um arquivo existente._
+
+**`grep Nov /var/log/messages`**
+> _Procura as palavras **“Nov”** no arquivo **‘/ var/log/messages’**._
+
+**`grep ^Nov /var/log/messages`**
+> _Procura palavras que começam com **“Novembro”** no arquivo **‘/ var/log/messages’**._
+
+**`grep [0-9] /var/log/messages`**
+> _Seleciona todas as linhas no arquivo **‘/ var/log/messages’** que contêm números._
+
+**`grep Nov -R /var/log/*`**
+> _Encontra a sequência de caracteres **“Nov”** no diretório **‘ / var/log ’** e abaixo._
+
+**`sed ‘s/stringa1/stringa2/g’ example.txt`**
+> _Realoca **“string1”** com **“string2”** em ‘**example.txt’**_
+
+**`sed ‘/^$/d’ example.txt`**
+> _Remove todas as linhas em branco do **‘example.txt’**_
+
+**`sed ‘/ *#/d; /^$/d’ example.txt`**
+> _Exclui comentários e linhas em branco de **‘example.txt’**._
+
+**`sed -e ‘1d’ result.txt`**
+> _Elimina a primeira linha do arquivo **‘result.txt’**_
+
+**`sed -n ‘/string1/p’`**
+> _Exibi somente as linhas que contêm a palavra **“string1”**._
+
+### 4.17. Estabelecer o formato de conversão de arquivos
+
+**`dos2unix filedos.txt fileunix.txt`**
+> _Converte um formato de arquivo de texto do MSDOS para UNIX._
+
+**`unix2dos fileunix.txt filedos.txt`**
+> _Converte um formato de arquivo de texto do UNIX para MSDOS._
+
+**`recode ..HTML < page.txt > page.html`**
+> _Converte um arquivo de texto para html._
+
+**`recode -l | more`**
+> _Exibe todas as conversões de formato disponíveis._
+
+### 4.18. Análise de sistemas de arquivos
+
+**`badblocks -v /dev/hda1`**
+> _Verifica os blocos defeituosos no disco hda1._
+
+**`fsck /dev/hda1`**
+> _Repara / verificar a integridade do arquivo do sistema Linux no disco hda1._
+
+**`fsck.ext2 /dev/hda1`**
+> _Repara / verifica a integridade do sistema de arquivo ext2 no disco hda1._
+
+**`e2fsck /dev/hda1`**
+> _Repara / verifica a integridade do sistema de arquivo ext2 no disco hda1._
+
+**`e2fsck -j /dev/hda1`**
+> _Repara / verifica a integridade do sistema de arquivo ext3 no disco hda1._
+
+**`fsck.ext3 /dev/hda1`**
+> _Repara / verifica a integridade do sistema de arquivo ext3 no disco hda1._
+
+**`fsck.vfat /dev/hda1`**
+> _Repara / verifica integridade do arquivo sistema disco fat hda1._
+
+**`fsck.msdos /dev/hda1`**
+> _Repara / verifica a integridade de um arquivo a partir do dos no sistema de disco hda1._
+
+**`dosfsck /dev/hda1`**
+> _Repara / verifica a integridade de um arquivo a partir do dos no sistema de disco hda1._
+
+## 4.19. Formatar sistemas de arquivos
+
+**`mkfs /dev/hda1`**
+> _Verifica os blocos defeituosos no disco hda1._
+
+**`mke2fs /dev/hda1`**
+> _Repara / verifica a integridade do arquivo do sistema Linux no disco hda1._
+
+**`mke2fs -j /dev/hda1`**
+> _Repara / verifica a integridade do sistema de arquivo ext2 no disco hda1._
+
+**`mkfs -t vfat 32 -F /dev/hda1`**
+> _Repara / verifica a integridade do sistema de arquivo ext2 no disco hda1._
+
+**`fdformat -n /dev/fd0`**
+> _Repara / verifica a integridade do sistema de arquivo ext3 no disco hda1._
+
+**`mkswap /dev/hda3`**
+> _Repara / verifica a integridade do sistema de arquivo ext3 no disco hda1._
+
+### 4.20. Backups
+
+**`dump -0aj -f /tmp/home0.bak /home`**
+> _Faz um backup completo e salva do diretório **‘/Home’**._
+
+**`dump -1aj -f /tmp/home0.bak /home`**
+> _Faz um Backup incremental do diretório **‘ /home’**._
+
+**`restore -if /tmp/home0.bak`**
+> _Restaura um save interativamente._
+
+**`rsync -rogpav –delete /home /tmp`**
+> _Sincronização entre diretórios._
+
+**`rsync -rogpav -e ssh –delete /home ip_address`**
+> _Rsync através do túnel SSH._
+
+**`rsync -az -e ssh –delete ip_addr`**
+> _Sincroniza um diretório local com um diretório remoto via ssh e compressão._
+
+**`rsync -az -e ssh –delete /home/local ip_addr`**
+> _Sincroniza um diretório remoto em um diretório local através de ssh e compressão._
+
+**`dd bs=1M if=/dev/hda | gzip | ssh user@ip_addr ‘dd of=hda.gz’`**
+> _Faz um backup em um disco rígido de um host remoto através de ssh._
+
+**`dd if=/dev/sda of=/tmp/file1`**
+> _Salva o conteúdo de um disco rígido para um arquivo. (Neste caso o disco rígido é **“sda”** e o arquivo **“file1”**)._
+
+**`tar -Puf backup.tar /home/user`**
+> _Salva os diretórios/etc e a raiz (excluindo o conteúdo do subdiretório/root/dir1 /) em um arquivo compactado, cujo nome inclui a data e hora atual._
+
+**`( cd /tmp/local/ && tar c . ) | ssh -C user@ip_addr ‘cd /home/share/ && tar x -p’`**
+> _Copia o conteúdo de um diretório em um diretório remoto através de ssh._
+
+**`( tar c /home ) | ssh -C user@ip_addr ‘cd /home/backup-home && tar x -p’`**
+> _Copia um diretório local em um diretório remoto através de ssh._
+
+**`tar cf – . | (cd /tmp/backup ; tar xf – )`**
+> _Copia o local preservando as licenças e links de um diretório para outro._
+
+**`find /home/user1 -name ‘*.txt’ | xargs cp -av –target-directory=/home/backup/ –parents`**
+> _Encontra e copia todos os arquivos com extensão **‘.txt’** de um diretório para outro_
+
+**`find /var/log -name ‘*.log’ | tar cv –files-from=- | bzip2 > log.tar.bz2`**
+> _Encontra todos os arquivos com extensão **‘. log’** e fazer um arquivo bzip._
+
+**`dd if=/dev/hda of=/dev/fd0 bs=512 count=1`**
+> _Faz uma cópia do MRB (Master Boot Record) para um disquete._
+
+**`dd if=/dev/fd0 of=/dev/hda bs=512 count=1`**
+> _Restaura a cópia da (MBR Master Boot Record) gravada no disquete._
+
+### 4.21. CD-ROM
+
+**`cdrecord -v gracetime=2 dev=/dev/cdrom -eject blank=fast -force`**
+> _Limpa ou apaga um cd regravável (CD-RW)_
+
+**`mkisofs /dev/cdrom > cd.iso`**
+> _Cria uma imagem .iso do CD-ROM no disco._
+
+**`mkisofs /dev/cdrom | gzip > cd_iso.gz`**
+> _Cria uma imagem iso compactada do CD-ROM no disco._
+
+**`mkisofs -J -allow-leading-dots -R -V “Label CD” -iso-level 4 -o ./cd.iso data_cd`**
+> _Cria uma imagem .iso de um diretório._
+
+**`cdrecord -v dev=/dev/cdrom cd.iso`**
+> _Grava uma imagem iso._
+
+**`gzip -dc cd_iso.gz | cdrecord dev=/dev/cdrom –`**
+> _Grava uma imagem iso comprimida._
+
+**`mount -o loop cd.iso /mnt/iso`**
+> _Monta uma imagem iso._
+
+**`cd-paranoia -B`**
+> _Tira músicas de um cd para arquivos wav._
+
+**`cd-paranoia – ”-3”`**
+> _Pegua as 3 primeiras músicas de um cd para arquivos wav._
+
+**`cdrecord –scanbus`**
+> _Faz a varredura de buffer para identificar o canal scsi._
+
+**`dd if=/dev/hdc | md5sum`**
+> _Executa um md5sum em um dispositivo, como um CD._
+
+### 4.22. Redes (LAN e Wi-Fi)
+
+**`ifconfig eth0`**
+> _Exibe a configuração de uma placa de rede Ethernet._
+
+**`ifup eth0`**
+> _Ativa uma interface **‘eth0’**._
+
+**`ifdown eth0`**
+> _Desabilita uma interface **‘eth0’**._
+
+**`ifconfig eth0 192.168.0.1 netmask 255.255.255.0`**
+> _Configura um endereço IP._
+
+**`ifconfig eth0 promisc`**
+> _Configura **‘eth0’** modo comum para obter pacotes (sniffing)._
+
+**`dhclient eth0`**
+> _Ativa a interface **‘eth0’** em modo dhcp._
+
+**`route -n`**
+> _Exibe tabela de rota._
+
+**`route add -net 0/0 gw IP_Gateway`**
+> _Configura a entrada padrão._
+
+**`route add -net 192.168.0.0 netmask 255.255.0.0 gw 192.168.1.1`**
+> _Configura uma rota estática para encontrar a rede, ‘192.168.0.0/16’._
+
+**`route del 0/0 gw IP_gateway`**
+> _Remove a rota estática._
+
+**`echo “1” > /proc/sys/net/ipv4/ip_forward`**
+> _Ativa o IP de rota._
+
+**`hostname`**
+> _Exibe o nome do host do sistema._
+
+**`host www.example.com`**
+> _Encontra o nome do host para resolver o nome de um IP (1)._
+
+**`nslookup www.example.com`**
+> _Encontra o nome do host para resolver o nome de um IP e vice-versa (2)._
+
+**`ip link show`**
+> _Exibe o status de todas as interfaces._
+
+**`mii-tool eth0`**
+> _Exibe o status de **‘eth0’** link._
+
+**`ethtool eth0`**
+> _Exibe estatísticas da placa de rede **‘eth0’**._
+
+**`netstat -tup`**
+> _Exibe todas as conexões de rede ativa e seu PID._
+
+**`netstat -tupl`**
+> _Exibe todos os ouvintes de rede de serviços sobre o sistema e seu PID._
+
+**`tcpdump tcp port 80`**
+> _Exibe todo o tráfego HTTP._
+
+**`iwlist scan`**
+> _Exibe as redes sem fio._
+
+**`iwconfig eth1`**
+> _Exibe a configuração de uma placa de rede sem fio._
+
+**`whois www.example.com`**
+> _Pesquisa Base de dados Whois._
+
+### 4.23. Redes Microsoft Windows (SAMBA)
+
+**`nbtscan ip_addr`**
+> _Resolução de nome de rede da BIOS._
+
+**`nmblookup -A ip_addr`**
+> _Resolução de nome de rede da BIOS._
+
+**`smbclient -L ip_addr/hostname`**
+> _Visualiza compartilhamentos remotos de um host windows._
+
+### 4.24. Firewall (iptables)
+
+**`iptables -t filter -L`**
+> _Exibe todas as correntes na tabela de filtro._
+
+**`iptables -t nat -L`**
+> _Exibe todas as correntes da tabela nat._
+
+**`iptables -t filter -F`**
+> _Limpa todas as regras da tabela de filtro._
+
+**`iptables -t nat -F`**
+> _Limpa todas as regras da tabela nat._
+
+**`iptables -t filter -X`**
+> _Exclui qualquer cadeia criados pelo usuário._
+
+**`iptables -t filter -A INPUT -p tcp –dport telnet -j ACCEPT`**
+> _Permite conexões telnet de entrar._
+
+**`iptables -t filter -A OUTPUT -p tcp –dport http -j DROP`**
+> _Bloqueia conexões HTTP de saída._
+
+**`iptables -t filter -A FORWARD -p tcp –dport pop3 -j ACCEPT`**
+> _Permite conexões POP para uma cadeia de frente._
+
+**`iptables -t filter -A INPUT -j LOG –log-prefix “DROP INPUT”`**
+> _Registra uma sequência de entrada._
+
+**`iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE`**
+> _Configura uma PAT (conversão de endereços de porta) na eth0, escondendo os pacotes de saída de coação._
+
+### 4.25. Monitoramento e depuração
+
+**`top`**
+> _Exibe as tarefas Linux que mais utilizam a CPU._
+
+**`ps -eafw`**
+> _Exibe as tarefas do Linux._
+
+**`ps -e -o pid,args –forest`**
+> _Exibe as tarefas do Linux de forma hierárquica._
+
+**`pstree`**
+> _Exibe uma árvore de processos do sistema._
+
+**`kill -9 ID_Processo`**
+> _Força o encerramento de um processo._
+
+**`kill -1 ID_Processo`**
+> _Força um processo para recarregar a configuração._
+
+**`lsof -p $$`**
+> _Exibe uma lista de arquivos abertos por processos._
+
+**`lsof /home/user1`**
+> _Exibe uma lista de arquivos abertos em um determinado caminho do sistema._
+
+**`strace -c ls >/dev/null`**
+> _Exibe o sistema de chamadas feitas e recebidas por um processo._
+
+**`strace -f -e open ls >/dev/null`**
+> _Visualiza chamadas para a biblioteca._
+
+**`watch -n1 ‘cat /proc/interrupts’`**
+> _Exibe interrupções em tempo real._
+
+**`last reboot`**
+> Última reinicialização do sistema._
+
+**`lsmod`**
+> _Exibe o kernel carregado._
+
+**`free -m`**
+> _Exibe o status da RAM em megabytes._
+
+**`smartctl -A /dev/hda`**
+> _Monitora a confiabilidade de um disco rígido através do SMART._
+
+**`smartctl -i /dev/hda`**
+> _Verifica se o SMART está habilitado em um disco rígido._
+
+**`tail /var/log/dmesg`**
+> _Exibe os eventos inerentes no processo de carregamento do kernel._
+
+**`tail /var/log/messages`**
+> _Exibe eventos do sistema._
+
+### 4.26. Dicas e comandos úteis
+
+**`apropos …keyword`**
+> _Exibe uma lista de comandos que pertencem às palavras-chave de um programa; são úteis quando você sabe o que faz o seu programa, mas não conhece o nome do comando._
+
+**`man ping`**
+> _Exibe as páginas de manual on-line; por exemplo, um comando ping, use a opção **‘-k’** para encontrar qualquer comando relacionado._
+
+**`whatis …keyword`**
+> _Exibe a descrição do que o programa faz._	
+
+**`mkbootdisk –device /dev/fd0 'uname -r'`**
+> _Cria um disquete bootável._
+
+**`gpg -c file1`**
+> _Codifica um arquivo com o guarda de segurança do GNU._
+
+**`gpg file1.gpg`**
+> _Decodifica um arquivo com o guarda de segurança do GNU, informações do sistema Linux U._
+
+**`wget -r www.example.com`**
+> _Baixa um site inteiro._
+
+**`wget -c www.example.com/file.iso`**
+> _Baixa um arquivo com a possibilidade de parar o download e retomar mais tarde._
+
+**`echo ‘wget -c www.example.com/files.iso‘ | at 09`**
+> _Baixa um arquivo às 09 a.m_
+
+**`ldd /usr/bin/ssh`**
+> _Exibe bibliotecas compartilhadas que são exigidas pelo programa ssh._
+
+**`alias hh='history'`**
+> _Coloque um alias para um comando **– hh** = história._
+
+**`chsh`**
+> _Muda o Shell de comando._
+
+**`chsh –list-shells`**
+> _É um comando adequado para descobrir se você tem controle remoto em outro terminal._
+
+**`clear`**
+> _Limpa a tela do terminal._
+
+**`umcomando > archivodesaida.txt 2>&1`**
+> _Executa um comando e redireciona a saída para um arquivo, combinando entre ambos STDOUT e STDERR._
+
+**`umcomando | archivodesaida.txt 2> archivodeerros.txt`**
+> _Executa um comando, você redireciona a saída (STDOUT) para um arquivo e os erros (STDERR) para outro._
+
+**`umcomando | tee arquivodesaida.txt`**
+> _Executa um comando, exibe a saída na tela e simultaneamente grava em um arquivo._
+
+## 5. Bibliografia
+
+[1] [Canonical Ltda. Ubuntu, 2015](https://canonical.com/)
+[2] [Debian. Debian, 2015.](https://www.debian.org/index.pt.html)
+[3] [Fedora. Fedora, 2015.](https://www.debian.org/index.pt.html)
+[4] [OpenSuse. OpenSuse, 2015.](https://www.debian.org/index.pt.html)
+
+## 6. Redes sociais
+
+Participe de nossas páginas e grupos de debate:
+
+* [Facebook](https://www.facebook.com/gnulinuxbr)
+* [WhatsApp](https://chat.whatsapp.com/FqZLt9dSK685VaGfjoxwuw)
+* [Telegram](https://t.me/gnulinux_brasil)
