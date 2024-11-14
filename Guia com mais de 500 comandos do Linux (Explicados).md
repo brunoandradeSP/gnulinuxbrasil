@@ -76,9 +76,9 @@ A linha de comando, por exemplo, `ls -la /home`, é interpretada pelo shell, que
   ### 4.25. Monitoramento e depuração
   ### 4.26. Dicas e comandos úteis
 
-## 5. Bibliografia
+### 5. Bibliografia
 
-## 6. Redes sociais
+### 6. Redes sociais
 
 ## 1.	Guia de referência – Lista de comandos para Linux
 
