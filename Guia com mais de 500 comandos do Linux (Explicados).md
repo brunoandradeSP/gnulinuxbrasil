@@ -560,7 +560,7 @@ _Exibe a versão do kernel._
 > _Exibe o tipo e informações do arquivo **`file1`** na tela._
 
 **`file -i file1`**
-> _Exibe o tipo MIME de **`file1`**, como **`text/plain`** ou **`image/jpeg`*._
+> _Exibe o tipo MIME de **`file1`**, como **`text/plain`** ou **`image/jpeg`**._
 
 **`iconv -l`**
 > _Listas de cifras conhecidas._
