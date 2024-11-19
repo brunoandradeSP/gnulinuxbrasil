@@ -400,7 +400,7 @@ A linha de comando, por exemplo, `ls -la /home`, é interpretada pelo shell, que
 > _Exibe arquivos de swap._
 
 **`cat /proc/version`**
-_Exibe a versão do kernel._
+> _Exibe a versão do kernel._
 
 **`cat /proc/net/dev`**
 > _Exibe estatísticas e adaptadores de rede._
