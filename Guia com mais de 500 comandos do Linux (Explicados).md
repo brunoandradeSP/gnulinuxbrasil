@@ -1110,7 +1110,7 @@ _Exibe a versão do kernel._
 **`dosfsck /dev/hda1`**
 > _Repara / verifica a integridade de um arquivo a partir do dos no sistema de disco hda1._
 
-## 4.19. Formatar sistemas de arquivos
+### 4.19. Formatar sistemas de arquivos
 
 **`mkfs /dev/hda1`**
 > _Verifica os blocos defeituosos no disco hda1._
