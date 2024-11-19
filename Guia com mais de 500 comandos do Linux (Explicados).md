@@ -202,7 +202,7 @@ A linha de comando, por exemplo, `ls -la /home`, é interpretada pelo shell, que
 > _Lista trabalhos parados, em segundo plano ou pode continuá-los também._
 
 **`fg`**
-> _Traz o trabalho mais recente para o primeiro plano_
+> _Traz o trabalho mais recente para o primeiro plano._
 
 **`fg trab`**
 > _Traz o trabalho **“trab”** para o primeiro plano (substituir_ **`trab`** _pelo nome do processo)._
