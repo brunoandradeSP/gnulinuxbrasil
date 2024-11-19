@@ -1443,10 +1443,10 @@ _Exibe a versão do kernel._
 
 ## 5. Bibliografia
 
-[1] [Canonical Ltda. Ubuntu, 2015](https://canonical.com/)
-[2] [Debian. Debian, 2015.](https://www.debian.org/index.pt.html)
-[3] [Fedora. Fedora, 2015.](https://www.debian.org/index.pt.html)
-[4] [OpenSuse. OpenSuse, 2015.](https://www.debian.org/index.pt.html)
+* [1] [Canonical Ltda. Ubuntu, 2015](https://canonical.com/)
+* [2] [Debian. Debian, 2015.](https://www.debian.org/index.pt.html)
+* [3] [Fedora. Fedora, 2015.](https://www.debian.org/index.pt.html)
+* [4] [OpenSuse. OpenSuse, 2015.](https://www.debian.org/index.pt.html)
 
 ## 6. Redes sociais
 
