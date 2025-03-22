@@ -447,7 +447,7 @@ A linha de comando, por exemplo, `ls -la /home`, é interpretada pelo shell, que
 > _Desliga o sistema (4)._
 
 **`shutdown -r mensagem:`**
-> _Para enviar uma mensagem aos usuários afetados pelo desligamento, use o comando desta forma: **`sudo shutdown -r 30 "O sistema será reiniciado em 30 minutos”`**
+> _Para enviar uma mensagem aos usuários afetados pelo desligamento, use o comando desta forma: **`sudo shutdown -r 30 "O sistema será reiniciado em 30 minutos”`**._
 
 **`shutdown -c`**
 > _Cancela um desligamento do sistema planejado._
